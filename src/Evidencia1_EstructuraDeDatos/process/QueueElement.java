@@ -10,7 +10,7 @@ public class QueueElement implements Comparable<QueueElement> {
      * @param elementNo Número de elemento.
      * @param priority Prioridad del elemento.
      */
-    public QueueElement( int elementNo, int priority ){
+    public QueueElement(int elementNo, int priority){
         this.priority = priority;
         this.elementNo = elementNo;
     }

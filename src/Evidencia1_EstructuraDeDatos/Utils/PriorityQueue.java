@@ -11,7 +11,7 @@ public class PriorityQueue<T extends Comparable<T>> {
      * Constructor de la cola de prioridad.
      * @param cap Capacidad máxima de la cola de prioridad.
      */
-    public PriorityQueue( int cap ) {
+    public PriorityQueue(int cap) {
         this.cap = cap;
         this.data = new ArrayList<T>(cap);
     }
