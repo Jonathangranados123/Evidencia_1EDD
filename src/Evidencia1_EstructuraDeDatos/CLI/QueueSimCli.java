@@ -7,7 +7,7 @@ import java.util.Scanner;
 import java.lang.Math;
 
 public class QueueSimCli {
-    static PriorityQueue<QueueElement> q; // Cola de prioridad de elementos de tipo QueueElement
+    static PriorityQueue< QueueElement > q; // Cola de prioridad de elementos de tipo QueueElement
     static Scanner in = new Scanner(System.in); // Objeto para leer la entrada del usuario
     static int minService, maxService, minClient, maxClient, simTime, counter; // Variables para configurar la simulación
 
