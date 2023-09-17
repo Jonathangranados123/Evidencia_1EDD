@@ -1,5 +1,8 @@
-public class Main {
+import Evidencia1_EstructuraDeDatos.CLI.QueueSimCli;
+
+class Main {
     public static void main(String[] args) {
-        System.out.println("Hello world!");
+        QueueSimCli.initCli();
+        QueueSimCli.startSim();
     }
 }
