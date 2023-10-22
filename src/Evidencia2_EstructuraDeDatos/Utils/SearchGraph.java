@@ -3,6 +3,8 @@ package Evidencia2_EstructuraDeDatos.Utils;
 import java.util.LinkedList;
 import java.util.PriorityQueue;
 import java.util.HashMap;
+import java.util.Stack;
+
 import Evidencia2_EstructuraDeDatos.Utils.*;
 import Evidencia2_EstructuraDeDatos.Utils.Collections.Grafo;
 /**
@@ -45,6 +47,34 @@ public class SearchGraph {
         return null;
     }
     /**
+     * Realiza una búsqueda en profundidad (DFS) en un grafo desde un vértice de inicio hasta un vértice objetivo.
+     *
+     * @param grafo    El grafo en el que se realizará la búsqueda.
+     * @param inicio   El vértice de inicio de la búsqueda.
+     * @param objetivo El vértice objetivo al que se desea llegar.
+     * @return El vértice objetivo si se encuentra, o null si no se encuentra.
+     */
+    public static Vertice BusquedaProfundidad(Grafo grafo, String inicio, String objetivo){
+
+        var target = new Vertice(objetivo);
+        if(target.equals(new Vertice(inicio))) return target;
+
+        var stack = new Stack<Arista>();
+        var visited = new Stack<Arista>();
+
+        stack.addAll(grafo.getAdyacencias(new Vertice(inicio)));
+        while (!stack.isEmpty()) {
+            var current = stack.pop();
+            if(current.getV2().equals(target)){
+                return current.getV2();
+            }
+            visited.push(current);
+            stack.addAll(grafo.getAdyacencias(current.getV2()));
+            stack.removeAll(visited);
+        }
+        return null;
+    }
+    /**
      * Calcula la distancia más corta entre un vértice de inicio y un vértice objetivo utilizando el algoritmo de Dijkstra.
      *
      * @param grafo    El grafo en el que se realizará el cálculo.
@@ -81,4 +111,38 @@ public class SearchGraph {
 
         return dist.get(new Vertice(objetivo));
     }
+    /**
+     * Calcula el árbol de expansión mínima de un grafo utilizando el algoritmo de Prim.
+     *
+     * @param grafo  El grafo en el que se realizará el cálculo del árbol de expansión mínima.
+     * @param inicio El vértice de inicio del cálculo.
+     * @return El peso total del árbol de expansión mínima.
+     */
+    public static int PRIM(Grafo grafo, String inicio){
+        var pq = new PriorityQueue<Arista>();
+        var visited = new LinkedList<Vertice>();
+
+        pq.add(new Arista(new Vertice(inicio), null, 0));
+        int s=0;
+        while(!pq.isEmpty()){
+            var node =pq.poll();
+            if(visited.contains(node.getV1()))
+                continue;
+
+            var v = node.getV1();
+            var wt = node.getWeight();
+            s+=wt;
+            visited.add(v);
+
+            for(var it:grafo.getAdyacencias(v))
+            {
+                if(!visited.contains(it.getV2()))
+                {
+                    pq.add(new Arista(it.getV2(), null, it.getWeight()));
+                }
+            }
+        }
+        return s;
+    }
+
 }
