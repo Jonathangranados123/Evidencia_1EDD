@@ -1,10 +1,8 @@
-package Evidencia2_EstructuraDeDatos.Utils;
-
+package Evidencia2_EstructuraDeDatos;
 import java.util.LinkedList;
+import java.util.Stack;
 import java.util.PriorityQueue;
 import java.util.HashMap;
-import java.util.Stack;
-
 import Evidencia2_EstructuraDeDatos.Utils.*;
 import Evidencia2_EstructuraDeDatos.Utils.Collections.Grafo;
 /**

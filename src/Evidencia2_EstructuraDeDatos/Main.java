@@ -1,7 +1,7 @@
 package Evidencia2_EstructuraDeDatos;
 import Evidencia2_EstructuraDeDatos.KruskalUtils.*;
 import Evidencia2_EstructuraDeDatos.Utils.Collections.Grafo;
-import Evidencia2_EstructuraDeDatos.Utils.SearchGraph;
+import Evidencia2_EstructuraDeDatos.SearchGraph;
 
 import java.util.ArrayList;
 import java.util.Comparator;
@@ -67,6 +67,9 @@ public class Main  {
 // Realizar cálculo de distancia más corta utilizando Dijkstra o PRIM
         var ans = SearchGraph.dijkstra(grafo,CINCO, DIEZ);
         System.out.println(ans);
+
+//        var ans = SearchGraph.PRIM(grafo,CINCO);
+//        System.out.println(ans);
 
 
 
