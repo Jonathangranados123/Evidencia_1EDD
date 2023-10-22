@@ -10,7 +10,7 @@ import java.util.List;
 /**
  * Clase principal que contiene el método `main` para ejecutar las operaciones en un grafo y el algoritmo de Kruskal.
  */
-public class Main  {
+public class Main   {
     /**
      * Método principal que ejecuta las operaciones en un grafo y el algoritmo de Kruskal.
      *
