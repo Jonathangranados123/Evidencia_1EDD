@@ -11,7 +11,6 @@ import java.util.List;
  * Clase principal que contiene el método `main` para ejecutar las operaciones en un grafo y el algoritmo de Kruskal.
  */
 public class Main {
-
     /**
      * Método principal que ejecuta las operaciones en un grafo y el algoritmo de Kruskal.
      *
@@ -28,9 +27,8 @@ public class Main {
         final String DIEZ = "10";
         final String NUEVE = "9";
 
-        var grafo = new Grafo();
-
         // Agregando vértices al grafo
+        var grafo = new Grafo();
         grafo.addVertice(CINCO);
         grafo.addVertice(CUATRO);
         grafo.addVertice(TRES);
@@ -46,11 +44,31 @@ public class Main {
         grafo.addArista(CINCO, CUATRO, 3);
         grafo.addArista(CUATRO, CINCO, 3);
 
-        // Continuar con la adición de aristas (se omite por simplicidad)
+        grafo.addArista(CUATRO, OCHO, 1);
+        grafo.addArista(OCHO, CUATRO, 1);
 
-        // Realizar cálculo de distancia más corta utilizando Dijkstra
-        var ans = SearchGraph.dijkstra(grafo, CINCO, DIEZ);
+        grafo.addArista(CUATRO, TRES, peso);
+        grafo.addArista(TRES, CUATRO, peso);
+
+        grafo.addArista(TRES, OCHO, peso);
+        grafo.addArista(OCHO, TRES, peso);
+
+        grafo.addArista(TRES, DIEZ, peso);
+        grafo.addArista(DIEZ, TRES, peso);
+
+        grafo.addArista(OCHO, QUINCE, peso);
+        grafo.addArista(QUINCE, OCHO, peso);
+
+        grafo.addArista(NUEVE, QUINCE, peso);
+        grafo.addArista(QUINCE, NUEVE, peso);
+
+        grafo.addArista(NUEVE, DIEZ, peso);
+        grafo.addArista(DIEZ, NUEVE, peso);
+// Realizar cálculo de distancia más corta utilizando Dijkstra o PRIM
+        var ans = SearchGraph.dijkstra(grafo,CINCO, DIEZ);
         System.out.println(ans);
+
+
 
         //----------------------KRUSKAL------------------//
         int V = 4;
@@ -58,15 +76,15 @@ public class Main {
                 List.of(new Edge(0, 1, 10), new Edge(0, 2, 6),
                         new Edge(0, 3, 5), new Edge(1, 3, 15),
                         new Edge(2, 3, 4)));
-
         // Ordenar las aristas por peso
         graphEdges.sort(new Comparator<Edge>() {
-            public int compare(Edge o1, Edge o2) {
+            public int compare(Edge o1, Edge o2)
+            {
                 return o1.weight - o2.weight;
             }
         });
-
         // Ejecutar el algoritmo de Kruskal
         Kruskal.kruskals(V, graphEdges);
+
     }
 }
