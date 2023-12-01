@@ -65,11 +65,11 @@ public class Main   {
         grafo.addArista(NUEVE, DIEZ, peso);
         grafo.addArista(DIEZ, NUEVE, peso);
 // Realizar cálculo de distancia más corta utilizando Dijkstra o PRIM
-        var ans = SearchGraph.dijkstra(grafo,CINCO, DIEZ);
-        System.out.println(ans);
-
-//        var ans = SearchGraph.PRIM(grafo,CINCO);
+//        var ans = SearchGraph.dijkstra(grafo,CINCO, DIEZ);
 //        System.out.println(ans);
+
+        var ans = SearchGraph.PRIM(grafo,CINCO);
+        System.out.println(ans);
 
 
 
@@ -88,6 +88,5 @@ public class Main   {
         });
         // Ejecutar el algoritmo de Kruskal
         Kruskal.kruskals(V, graphEdges);
-
     }
 }
