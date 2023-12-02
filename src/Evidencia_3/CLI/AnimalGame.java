@@ -106,7 +106,7 @@ public class AnimalGame {
      * @param prompt Pregunta para el usuario.
      * @return true si la respuesta es sí, false si la respuesta es no.
      */
-    public static boolean query(String prompt) {
+    public static boolean  query(String prompt) {
         String answer;
 
         System.out.print(prompt + " [S o N]: ");
