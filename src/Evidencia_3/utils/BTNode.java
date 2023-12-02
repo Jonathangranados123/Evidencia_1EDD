@@ -162,7 +162,7 @@ public class BTNode<E> {
      *
      * @return El nodo resultante después de eliminar el nodo más a la derecha.
      */
-    public BTNode<E> removeRightmost() {
+    public BTNode<E>  removeRightmost() {
         if (right == null)
             return left;
         else {

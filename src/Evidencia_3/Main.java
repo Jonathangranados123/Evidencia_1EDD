@@ -13,7 +13,7 @@ import Evidencia_3.utils.BTNode;
      *
      * @param args Argumentos de línea de comandos (no se utilizan).
      */
-    public static void main(String[] args) {
+    public static void  main(String[] args) {
         BTNode<String> root;
 
         // Muestra las instrucciones del juego.
